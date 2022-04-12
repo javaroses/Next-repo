@@ -36,14 +36,14 @@ export default function Home() {
                     </svg>
                   </a>
                   {dropdown && (
-                    <ul className="absolute w-[200px] bg-gray-700 rounded mt-5 shadow-2xl">
+                    <ul className="absolute w-[200px] bg-gray-800 rounded mt-5 shadow-2xl">
                       <li>
-                        <a href="" className="flex py-3 px-2 border-b border-white/5 hover:bg-gray-600">
+                        <a href="" className="flex py-3 px-2 border-b border-white/5 hover:bg-gray-700/60">
                           internet
                         </a>
                       </li>
                       <li>
-                        <a href="" className="flex py-3 px-2 border-b border-white/5 hover:bg-gray-600">
+                        <a href="" className="flex py-3 px-2 border-b border-white/5 hover:bg-gray-700">
                           books
                         </a>
                       </li>
@@ -58,7 +58,7 @@ export default function Home() {
               </ul>
             </div>
             <div className="w-2/12">
-              <input type="text" className="bg-gray-700 py-3 px-6 w-full rounded-full bg-search pl-12" placeholder="search ..." />
+              <input type="text" className="bg-gray-700 py-3 px-6 w-full rounded-full bg-search pl-14" placeholder="search ..." />
             </div>
           </div>
         </div>
