@@ -11,6 +11,14 @@ module.exports = {
         sans: ["Inter", "sans-serif"],
       },
     },
+    container:{
+      screens:{
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1080px",
+      },
+    },
   },
   variant:{
     extend:{},
