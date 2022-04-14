@@ -1,0 +1,68 @@
+[
+    {
+      "id": 1,
+      "thumbnail": "/kamera.jpg",
+      "category": "Ui design",
+      "date": "20/08/2020",
+      "title": "Understanding the power of the web",
+      "shortDecription": "Morbi vita estibulum fringilla scelerisque odio, ut accumsan mi ultrices eu. Nunc rhoncus lacus pellentesque arcu vulputate ornare. Sed id tempus urna.",
+      "authorAvatar": "/avatar.jpg",
+      "authorName": "Rizki",
+      "authorJob": "Front End Developer"
+    },
+    {
+      "id": 2,
+      "thumbnail": "/book.jpg",
+      "category": "Ui design",
+      "date": "20/08/2020",
+      "title": "Understanding the power of the web",
+      "shortDecription": "Morbi vita estibulum fringilla scelerisque odio, ut accumsan mi ultrices eu. Nunc rhoncus lacus pellentesque arcu vulputate ornare. Sed id tempus urna.",
+      "authorAvatar": "/avatar.jpg",
+      "authorName": "Rizki",
+      "authorJob": "Front End Developer"
+    },
+    {
+      "id": 3,
+      "thumbnail": "/com.jpg",
+      "category": "Ui design",
+      "date": "20/08/2020",
+      "title": "Understanding the power of the web",
+      "shortDecription": "Morbi vita estibulum fringilla scelerisque odio, ut accumsan mi ultrices eu. Nunc rhoncus lacus pellentesque arcu vulputate ornare. Sed id tempus urna.",
+      "authorAvatar": "/avatar.jpg",
+      "authorName": "Rizki",
+      "authorJob": "Front End Developer"
+    },
+    {
+      "id": 4,
+      "thumbnail": "/work.jpg",
+      "category": "Ui design",
+      "date": "20/08/2020",
+      "title": "Understanding the power of the web",
+      "shortDecription": "Morbi vita estibulum fringilla scelerisque odio, ut accumsan mi ultrices eu. Nunc rhoncus lacus pellentesque arcu vulputate ornare. Sed id tempus urna.",
+      "authorAvatar": "/avatar.jpg",
+      "authorName": "Rizki",
+      "authorJob": "Front End Developer"
+    },
+    {
+      "id": 5,
+      "thumbnail": "/makita.jpg",
+      "category": "Ui design",
+      "date": "20/08/2020",
+      "title": "Understanding the power of the web",
+      "shortDecription": "Morbi vita estibulum fringilla scelerisque odio, ut accumsan mi ultrices eu. Nunc rhoncus lacus pellentesque arcu vulputate ornare. Sed id tempus urna.",
+      "authorAvatar": "/avatar.jpg",
+      "authorName": "Rizki",
+      "authorJob": "Front End Developer"
+    },
+    {
+      "id": 6,
+      "thumbnail": "/set.jpg ",
+      "category": "Ui design",
+      "date": "20/08/2020",
+      "title": "Understanding the power of the web",
+      "shortDecription": "Morbi vita estibulum fringilla scelerisque odio, ut accumsan mi ultrices eu. Nunc rhoncus lacus pellentesque arcu vulputate ornare. Sed id tempus urna.",
+      "authorAvatar": "/avatar.jpg",
+      "authorName": "Rizki",
+      "authorJob": "Front End Developer"
+    }
+  ]
