@@ -3,10 +3,10 @@ export default function FeaturedPost() {
   return (
     <article>
       <div className="flex -mx-4 items-center flex-wrap" >
-        <div className="px-4 lg:w-8/12 w-full md:w-7/12">
+        <div className="px-4 lg:w-8/12 w-full md:w-7/12 w-full">
           <img src="/tumbler.jpg" className="rounded-lg aspect-video" />
         </div>
-        <div className="lg:w-4/12 md:w-5/12 w-full px-4 ">
+        <div className="lg:w-4/12 md:w-5/12 w-full px-4 mt-4">
             <InfoPost
             category = "Ui design"
             date = "20/08/2020"
@@ -19,6 +19,7 @@ export default function FeaturedPost() {
             
         </div>
       </div>
+      <hr className="border-white/10 mt-10"/>
     </article>
   );
 }

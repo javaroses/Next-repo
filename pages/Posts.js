@@ -6,16 +6,15 @@ import Layout from "@components/Layout";
 import mockPosts from "/utils/posts.json"
 
 export default function Posts(){
-    const [posts, setPosts]=useState([]);
+    const [posts, setPosts]=useState(mockPosts);
     return(
     <Layout>
-
       <Container>
           <SectionHeader>Ui Designer</SectionHeader>
           {!posts.length?(   
-              <div className="text-center">
-              <h2 className="text-6xl py-2"> No result Bruh</h2>
-              <p className="text-xl">We cant find any posts with keyword, 
+              <div className="text-center py-20">
+              <h2 className="text-6xl"> No result Bruh</h2>
+              <p className="text-xl text-white/60 md:w-6/12 mx-auto w-full ">We cant find any posts with keyword, 
                   please try another keyword</p>
               </div>  
           ):(
