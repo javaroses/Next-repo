@@ -29,7 +29,8 @@ export default function Navbar() {
               <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
-          <div className={`lg:w-7/12 w-full bg-gradient-to-b from-gray-500 to-gray-700 fixed top-0 h-full p-10 transition-all ${offcanvas? "left-0":"-left-full"}`}>
+          <div className={`lg:w-7/12 w-full bg-gradient-to-b from-gray-500 to-gray-700 fixed top-0 h-full p-10 transition-all 
+          ${offcanvas? "left-0":"-left-full"}`}>
             <button className="absolute top-10 right-10"
             onClick={()=>{setOffcanvas(false)}}
             >
@@ -72,7 +73,7 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
-          <div className="w-3/12 hidden">
+          <div className="w-3/12 absolute ">
             <input type="text" autoComplete="off" className="bg-gray-700 py-3 px-6 w-full rounded-full border-none bg-search pl-14" placeholder="search ..." />
           </div>
         </div>
