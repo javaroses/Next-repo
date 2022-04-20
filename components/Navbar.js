@@ -4,6 +4,7 @@ import Container from "@components/Container";
 export default function Navbar() {
   const [dropdown, setDropdown] = useState(false);
   const [offcanvas, setOffcanvas] = useState(false);
+  const [search, setSearch] = useState(false);
   const dropdownlist = [
     { text: "Internet", href: "#" },
     { text: "Open Source", href: "#" },
@@ -14,7 +15,7 @@ export default function Navbar() {
       <Container>
         <div className="flex items-center">
           <div className="w-3/12 lg:hidden">
-            <button onClick={()=> {setOffcanvas(!offcanvas)}}>
+            <button onClick={()=> setOffcanvas(!offcanvas)}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4 6H20M4 12H20M4 18H20" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -25,14 +26,16 @@ export default function Navbar() {
             javaroses
           </div>
           <div className="w-3/12 text-right lg:hidden">
+            <button onClick={()=>setSearch(!search)}>
             <svg className="inline-block" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
+            </button>
           </div>
           <div className={`lg:w-7/12 w-full bg-gradient-to-b from-gray-500 to-gray-700 fixed top-0 h-full p-10 transition-all 
           ${offcanvas? "left-0":"-left-full"}`}>
             <button className="absolute top-10 right-10"
-            onClick={()=>{setOffcanvas(false)}}
+            onClick={()=>setOffcanvas(false)}
             >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
@@ -73,8 +76,13 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
-          <div className="w-3/12 absolute ">
-            <input type="text" autoComplete="off" className="bg-gray-700 py-3 px-6 w-full rounded-full border-none bg-search pl-14" placeholder="search ..." />
+          <div className={`lg:w-3/12 fixed w-full left-0 px-10 transition-all ${search?"top-10":"-top-40"}`}>
+            <input type="text" autoComplete="off" className="bg-gray-700 py-3 px-6 w-full lg:rounded-full rounded-lg border-none bg-search pl-14" placeholder="search ..." />
+            <button className="absolute top-3 right-12"
+            onClick={()=>setSearch(false)}
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
           </div>
         </div>
       </Container>
