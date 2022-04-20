@@ -4,11 +4,14 @@ import CardPost from "@components/CardPost";
 import Container from "@components/Container";
 import Layout from "@components/Layout";
 import mockPosts from "/utils/posts.json"
-
+import Head from "next/head";
 export default function Posts(){
     const [posts, setPosts]=useState(mockPosts);
     return(
     <Layout>
+       <Head>
+        <title>posts &mdash; Javaroses</title>
+      </Head>
       <Container>
           <SectionHeader>Ui Designer</SectionHeader>
           {!posts.length?(   
