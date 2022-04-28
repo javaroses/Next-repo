@@ -27,7 +27,7 @@ export default function Detail() {
               <img src="/kalkulator.jpg" className="w-full rounded-2xl" alt="" />
             </div>
             <div className="md:w-8/12 w-full mx-auto leading-relaxed">
-              <p className="text-2xl mb-4">
+              <p className="text-2xl mb-4 ">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque corporis assumenda porro, ea aliquam magnam veritatis laboriosam voluptatum reprehenderit. Dolor nobis exercitationem voluptatum atque, facilis pariatur repellendus quo distinctio error.
               </p>
               <p className="mb-4 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ratione, ducimus cum accusantium iste expedita similique illo maxime, aut reiciendis ex quis dolorum asperiores ipsum voluptatum, magni voluptates consequuntur repellendus! </p>

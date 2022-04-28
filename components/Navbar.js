@@ -86,7 +86,7 @@ export default function Navbar() {
             </ul>
           </div>
           <div className={`lg:w-3/12 fixed w-full left-0 px-10 lg:px-0 lg:static transition-all ${search ? "top-10" : "-top-40"}`}>
-            <input type="text" autoComplete="off" className="bg-cyan-700 py-3 px-6 w-full lg:rounded-full rounded-lg border-none bg-search pl-14" placeholder="search ..." />
+            <input type="text" autoComplete="off" className="bg-gray-700 py-3 px-6 w-full lg:rounded-full rounded-lg border-none bg-search pl-14" placeholder="search ..." />
             <button className="absolute top-3 right-12 lg:hidden " onClick={() => setSearch(false)}>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
