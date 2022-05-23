@@ -5,7 +5,7 @@ export default function FeaturedPost(props) {
     <article>
       <div className="flex -mx-4 items-center flex-wrap" >
         <div className="px-4 lg:w-8/12 w-full md:w-7/12 w-full">
-          <Link href="/detail">
+          <Link href={props.slug}>
           <a>
           <img src={process.env.NEXT_PUBLIC_APIURL + props.thumbnail.formats.medium.url} className="rounded-lg aspect-video" />
           </a>
@@ -15,7 +15,8 @@ export default function FeaturedPost(props) {
             <InfoPost
             category = {props.category.name}
             date = {props.category.published_at}
-            title = {props.title}
+            title = {props.Title}
+            slug= {props.slug}
             shortDecription = {props.headline}
             authorAvatar ={process.env.NEXT_PUBLIC_APIURL + props.author.avatar.url}
             authorName = {props.author.name}

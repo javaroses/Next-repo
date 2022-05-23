@@ -1,19 +1,21 @@
 import Link from "next/link";
 import InfoPost from "./InfoPost";
+
+
 export default function CardPost(props) {
-  console.log(props);
   return (
     <article>
-      <Link href="/detail">
+      <Link href={props.slug}>
         <a>
-          <img className=" w-full rounded aspect-video mb-4 " src={ process.env.NEXT_PUBLIC_APIURL + props.thumbnail.formats.medium.url} />
+          <img src={ process.env.NEXT_PUBLIC_APIURL + props.thumbnail.url} className=" w-full rounded aspect-video mb-4 "  />
         </a>
       </Link>
       <InfoPost
         category={props.category.name}
         date={props.category.published_at}
-        title={props.title}
+        title={props.Title}
         shortDecription={props.headline}
+        slug= {props.slug}
         authorAvatar={process.env.NEXT_PUBLIC_APIURL + props.author.avatar.url}
         authorName={props.author.name}
         authorJob={props.author.job}

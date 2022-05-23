@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function PostMetaTitle({category,title,date}) {
+export default function PostMetaTitle({category,title,date,slug}) {
   return (
     <>
       <div className="flex items-center text-white/60 ">
@@ -9,7 +9,7 @@ export default function PostMetaTitle({category,title,date}) {
         <div className="ml-2">{date}</div>
       </div>
       <h2 className="text-2xl mt-4">
-        <Link href="/detail"><a >{title}</a></Link>
+        <Link href={slug}><a >{title}</a></Link>
         </h2>
     </>
   );
