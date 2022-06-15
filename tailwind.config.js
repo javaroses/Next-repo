@@ -10,6 +10,14 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },
+      typography:{
+        DEFAULT:{
+          css:{
+            color:"#fff",
+            maxwidth:"100%",
+          }
+        }
+      }
     },
     container:{
       screens:{
@@ -33,7 +41,8 @@ module.exports = {
         },
         // ...
       })
-    })
-    
+    }),
+
+    require('@tailwindcss/typography') 
   ],
 };

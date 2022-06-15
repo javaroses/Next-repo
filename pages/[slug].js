@@ -1,9 +1,10 @@
 import Container from "@components/Container";
-import Layout from "@components/Layout";
+// import Layout from "@components/Layout";
 import PostMetaTitle from "@components/PostMetaTitle";
 import PostAuthor from "@components/PostAuthor";
 import Head from "next/head";
 import { formatDate } from "utils/utils";
+import  ReactMarkdown  from "react-markdown";
 
 export async function getServerSideProps({ params: { slug } }) {
   const reqDetail = await fetch(process.env.NEXT_PUBLIC_APIURL + '/posts?slug=' + slug);
@@ -22,8 +23,7 @@ export async function getServerSideProps({ params: { slug } }) {
 }
 
 export default function Detail({ 
-  single:{Title, 
-  slug, 
+  single:{title, 
   category,
   published_at,
   thumbnail,
@@ -32,17 +32,16 @@ export default function Detail({
   author
 }}) {
   return (
-    <Layout>
+    <>
       <Container>
         <Head>
-          <title>{Title} &mdash; Javaroses</title>
+          <title>{title} &mdash; Javaroses</title>
         </Head>
         <div className="md:w-6/12 w-full mx-auto flex items-center flex-col">
           <PostMetaTitle 
           category={category.name}
           date={formatDate(published_at)}
-          title={Title} 
-          slug={slug} 
+          title={title} 
           />
           <PostAuthor 
           authorAvatar={process.env.NEXT_PUBLIC_APIURL + author.avatar.url}
@@ -58,10 +57,12 @@ export default function Detail({
             {headline}
           </p>
           <p className="mb-4 ">
-           {content}
           </p>
+          <ReactMarkdown className="prose">
+             {content}
+           </ReactMarkdown>
         </div>
       </Container>
-    </Layout>
+    </>
   );
   }

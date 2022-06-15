@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function PostMetaTitle({category,title,date,slug}) {
+export default function PostMetaTitle({ category, title, date, slug, center }) {
   return (
     <>
       <div className="flex items-center text-white/60 ">
@@ -8,9 +8,15 @@ export default function PostMetaTitle({category,title,date,slug}) {
         &bull;
         <div className="ml-2">{date}</div>
       </div>
-      <h2 className="text-2xl mt-4">
-        <Link href={slug}><a >{title}</a></Link>
-        </h2>
+      <h2 className={`"text-2xl mt-4"${center ? "text-center" : ""}`}>
+        {slug ? (
+          <Link href={`/${slug}`}>
+            <a>{title}</a>
+          </Link>
+        ) : (
+          <>{title}</>
+        )}
+      </h2>
     </>
   );
 }

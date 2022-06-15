@@ -1,20 +1,38 @@
 import { useState } from "react";
 import SectionHeader from "@components/sectionHeader";
-import CardPost from "@components/CardPost";
 import Container from "@components/Container";
-import Layout from "@components/Layout";
-import mockPosts from "/utils/posts.json"
+// import Layout from "@components/Layout";
+import mockPosts from "/utils/posts.json";
 import Head from "next/head";
-export default function Posts(){
-    const [posts, setPosts]=useState(mockPosts);
-    return(
-    <Layout>
-       <Head>
-        <title>posts &mdash; Javaroses</title>
+import PostList from "@components/PostList";
+
+export async function getServerSideProps({ query:{q} }) {
+  const reqPosts = await fetch(process.env.NEXT_PUBLIC_APIURL + '/posts?title_contains=' + q);
+  const posts = await reqPosts.json();
+    
+//   if (!posts.length)
+//     return {
+//       notFound: true
+//     };
+  return {
+    props: {
+      posts,
+      q
+    },
+  };
+}
+
+export default function Search({ posts,q }) {
+  return (
+    <>
+      <Head>
+        <title> Search &mdash; Javaroses</title>
       </Head>
       <Container>
-          <SectionHeader>Ui Designer</SectionHeader>
-          {!posts.length?(   
+        <SectionHeader>Search: {q}</SectionHeader>
+        <PostList posts={posts} />
+
+        {/* {!posts.length?(   
               <div className="text-center py-20">
               <h2 className="text-6xl"> No result Bruh</h2>
               <p className="text-xl text-white/60 md:w-6/12 mx-auto w-full ">We cant find any posts with keyword, 
@@ -28,10 +46,9 @@ export default function Posts(){
               </div>
           ))}
           </div>
-          )}
+          )} */}
+
       </Container>
-    </Layout>
+    </>
   );
 }
-
-    
