@@ -1,26 +1,34 @@
 import InfoPost from "@components/InfoPost";
 import Link from "next/link";
-export default function FeaturedPost(props) {
+export default function FeaturedPost({
+  title, 
+  category,
+  published_at,
+  thumbnail,
+  headline,
+  author,
+  slug
+}) {
   return (
     <article>
       <div className="flex -mx-4 items-center flex-wrap" >
-        <div className="px-4 lg:w-8/12 w-full md:w-7/12 w-full">
-          <Link href={`/${props.slug}`}>
+        <div className="px-4 lg:w-8/12 md:w-7/12 w-full">
+          <Link href={`/${slug}`}>
           <a>
-          <img src={process.env.NEXT_PUBLIC_APIURL + props.thumbnail.formats.medium.url} className="rounded-lg aspect-video" />
+          <img src={process.env.NEXT_PUBLIC_APIURL + thumbnail.formats.medium.url} className="rounded-lg aspect-video" />
           </a>
           </Link>
         </div>
-        <div className="lg:w-4/12 md:w-5/12 w-full px-4 mt-4">
+        <div className="lg:w-4/12 md:w-5/12 w-full px-4 mt-2">
             <InfoPost
-            category = {props.category.name}
-            date = {props.category.published_at}
-            title = {props.title}
-            slug= {props.slug}
-            shortDecription = {props.headline}
-            authorAvatar ={process.env.NEXT_PUBLIC_APIURL + props.author.avatar.url}
-            authorName = {props.author.name}
-            authorJob = {props.author.job}
+            category = {category.name}
+            date = {category.published_at}
+            title = {title}
+            slug= {slug}
+            shortDecription = {headline}
+            authorAvatar ={process.env.NEXT_PUBLIC_APIURL + author.avatar.url}
+            authorName = {author.name}
+            authorJob = {author.job}
             />
             
         </div>

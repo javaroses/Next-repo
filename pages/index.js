@@ -5,7 +5,7 @@ import Container from "@components/Container";
 import PostList from "@components/PostList";
 import mockPosts from "utils/posts.json";
 import Head from "next/head";
-
+import LandingPage from "@components/LandingPage";
 export async function getServerSideProps() {
   const reqFeatured = await fetch(process.env.NEXT_PUBLIC_APIURL + "/posts?featured=true");
   const featured = await reqFeatured.json();
@@ -28,6 +28,7 @@ export default function Home({ featured, posts }) {
         <title>Home &mdash; Javaroses</title>
       </Head>
       <Container>
+        <LandingPage/>
         {featured && <FeaturedPost { ...featured} />}
        <PostList posts={posts}/>
       </Container>

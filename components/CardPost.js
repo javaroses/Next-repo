@@ -3,11 +3,12 @@ import InfoPost from "./InfoPost";
 
 
 export default function CardPost(props) {
+
   return (
     <article>
       <Link href={`/${props.slug}`}>
         <a>
-          <img src={ process.env.NEXT_PUBLIC_APIURL + props.thumbnail.url} className=" w-full rounded aspect-video mb-4 "  />
+          <img src={ process.env.NEXT_PUBLIC_APIURL + props.thumbnail.url} className=" w-full rounded-2xl aspect-video mb-4 shadow-2xl"  />
         </a>
       </Link>
       <InfoPost

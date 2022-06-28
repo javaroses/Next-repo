@@ -12,10 +12,6 @@ export async function getServerSideProps({params: {category: categorySlug} }) {
   const reqPosts = await fetch(process.env.NEXT_PUBLIC_APIURL + "/posts?_where[category.slug]=" + categorySlug);
   const posts = await reqPosts.json();
 
-  if(!posts.length)
-  return{
-    notFound:true
-  }
 
   return {
     props: {
@@ -32,7 +28,10 @@ export default function Posts({posts, category}){
       </Head>
       <Container>
           <SectionHeader>{category.name}</SectionHeader>
-          <PostList posts={posts}/>
+          <PostList posts={posts}
+          noresultTitle="No Posts 🥺"
+          noresultDescription="No Posts in This Category" 
+          />
           
           {/* {!posts.length?(   
               <div className="text-center py-20">

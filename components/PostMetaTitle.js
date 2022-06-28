@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function PostMetaTitle({ category, title, date, slug, center }) {
   return (
     <>
-      <div className="flex items-center text-white/60 ">
-        <div className="uppercase mr-2">{category}</div>
+      <div className="flex items-center text-black/60 ">
+        <div className="uppercase mr-2 ">{category}</div>
         &bull;
         <div className="ml-2">{date}</div>
       </div>

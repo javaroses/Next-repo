@@ -2,54 +2,60 @@ import { useState } from "react";
 import Container from "@components/Container";
 import Link from "next/link";
 import Router from "next/router";
-
-export default function Navbar({categories}) {
-  const [keyword, setKeyword ] = useState(false);
+import Image from "next/image";
+export default function Navbar({ categories }) {
+  const [keyword, setKeyword] = useState(false);
   const [offcanvas, setOffcanvas] = useState(false);
   const [search, setSearch] = useState(false);
-  const items = categories.map(
-    category => ({name:category.name, href: `/category/${category.slug}`}))
+  const [home, setHome]= useState(false);
+  const items = categories.map((category) => ({ name: category.name, href: `/category/${category.slug}` }));
 
-    function doSearch(e){
-      e.preventDefault();
-      
-      Router.push(
-        {
-          pathname: '/search',
-          query: {
-            q:keyword
-          }
-        }
-      )
-    }
+  function doSearch(e) {
+    e.preventDefault();
+
+    Router.push({
+      pathname: "/search",
+      query: {
+        q: keyword,
+      },
+    });
+  }
+
+  const showHome =()=>{
+
+  }
   return (
-    <nav className="py-10">
+    <nav className="py-5 lg:py-0 ">
       <Container>
         <div className="flex items-center">
           <div className="w-3/12 lg:hidden">
             <button onClick={() => setOffcanvas(!offcanvas)}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 6H20M4 12H20M4 18H20" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
               </svg>
             </button>
           </div>
-          <div className="lg:w-2/12 w-6/12 pr-7 ">
-            <Link href="/">
-              <a className="flex items-center justify-center lg:justify-start">
-                <div className="w-10 h-10 bg-gray-500 rounded flex items-center justify-center mr-4 shadow-2xl">j</div>
-                javaroses
-              </a>
-            </Link>
+          <div className="lg:w-6/12 w-6/12 ">
+            <a className="">
+              <Link href="/">
+                <div className="flex w-4/12 selection:cursor-pointer lg:justify-start ">
+                  <Image className="" src="/icon.svg" width={60} height={60} />
+                 <div className="w-4/12">home</div>
+                </div>
+                  
+              </Link>
+            </a>
           </div>
-          <div className="w-2/12 text-right lg:hidden">
+          
+          <div className="w-3/12 text-right lg:hidden">
             <button onClick={() => setSearch(!search)}>
-              <svg className="inline-block" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
               </svg>
             </button>
           </div>
           <div
-            className={`lg:w-8/12 w-full bg-gradient-to-b from-gray-500 to-gray-700 lg:bg-none lg:static fixed top-0 h-full lg:h-auto p-10 p-0 transition-all 
+            className={`lg:w-4/12 w-full bg-gradient-to-b from-gray-500 to-gray-700 lg:bg-none lg:static fixed top-0 h-full lg:h-auto p-10 p-0 transition-all 
           ${offcanvas ? "left-0" : "-left-full"}`}
           >
             <button className="absolute top-10 right-10 lg:hidden" onClick={() => setOffcanvas(false)}>
@@ -58,24 +64,19 @@ export default function Navbar({categories}) {
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
             </button>
-            <ul onClick={()=> setOffcanvas(false)} className="lg:space-x-14 flex lg:items-center flex-col mt-10 ml-10 lg:mt-0 lg:ml-0 lg:flex-row space-y-4 lg:space-y-0">
-             {items.map(item=>(
-              <li key={item.name}>
-                <Link href={item.href} >
-                  <a className="hover:underline">{item.name}</a>
-                </Link>
-              </li>
+
+            <ul onClick={() => setOffcanvas(false)} className="lg:space-x-14 flex lg:items-center flex-col mt-10 ml-10 lg:mt-0 lg:ml-0 lg:flex-row space-y-4 lg:space-y-0 justify-center">
+              {items.map((item) => (
+                <li className="py-2 lg:border-b-2 border-white hover:border-black" key={item.name}>
+                  <Link href={item.href}>
+                    <a className="lg:text-black font-medium text-white">{item.name}</a>
+                  </Link>
+                </li>
               ))}
-              {/* <li>
-                <Link href="/posts">
-                  <a className="hover:underline">Front end</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/posts">
-                  <a className="hover:underline">Back end</a>
-                </Link>
-              </li>
+              {/* 
+
+              pb-3 border-b border-white hover:border-black
+
               <li className="relative">
                 <a className="hove:underline cursor-pointer flex items-center" onClick={() => setDropdown(!dropdown)}>
                   lainnya
@@ -99,16 +100,17 @@ export default function Navbar({categories}) {
               </li> */}
             </ul>
           </div>
-          <div className={`lg:w-3/12 fixed w-full left-0 px-10 lg:px-0 lg:static transition-all ${search ? "top-10" : "-top-40"}`}>
+          <div className={`lg:w-2/12 fixed w-full left-0 px-8 lg:px-4 lg:static transition-all ${search ? "top-5" : "-top-40"}`}>
             <form onSubmit={doSearch}>
-            <input type="text" 
-            autoComplete="off" 
-            className="bg-gray-700 py-3 px-6 w-full lg:rounded-full rounded-lg border-none bg-search pl-14" 
-            placeholder="search ..." 
-            onChange={(e)=> setKeyword(e.target.value)}
-            />
-            </form>  
-            <button className="absolute top-3 right-12 lg:hidden " onClick={() => setSearch(false)}>
+              <input
+                type="text"
+                autoComplete="off"
+                className="bg-gray-200 py-2 w-full lg:h-10 h-14 lg:rounded-full rounded-lg outline-none bg-search pl-12 pr-10 lg:pr-5"
+                placeholder="search ..."
+                onChange={(e) => setKeyword(e.target.value)}
+              />
+            </form>
+            <button className="absolute top-4 right-[42px] lg:hidden " onClick={() => setSearch(false)}>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
