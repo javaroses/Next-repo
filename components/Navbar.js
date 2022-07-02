@@ -7,7 +7,7 @@ export default function Navbar({ categories }) {
   const [keyword, setKeyword] = useState(false);
   const [offcanvas, setOffcanvas] = useState(false);
   const [search, setSearch] = useState(false);
-  const [home, setHome]= useState(false);
+
   const items = categories.map((category) => ({ name: category.name, href: `/category/${category.slug}` }));
 
   function doSearch(e) {
@@ -21,9 +21,7 @@ export default function Navbar({ categories }) {
     });
   }
 
-  const showHome =()=>{
-
-  }
+  
   return (
     <nav className="py-5 lg:py-0 ">
       <Container>
@@ -36,11 +34,11 @@ export default function Navbar({ categories }) {
             </button>
           </div>
           <div className="lg:w-6/12 w-6/12 ">
-            <a className="">
+            <a className="flex">
               <Link href="/">
-                <div className="flex w-4/12 selection:cursor-pointer lg:justify-start ">
+                <div className=" w-4/12 cursor-pointer lg:justify-start ">
                   <Image className="" src="/icon.svg" width={60} height={60} />
-                 <div className="w-4/12">home</div>
+                  
                 </div>
                   
               </Link>
