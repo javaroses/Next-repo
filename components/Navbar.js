@@ -2,7 +2,7 @@ import { useState } from "react";
 import Container from "@components/Container";
 import Link from "next/link";
 import Router from "next/router";
-import Image from "next/image";
+
 export default function Navbar({ categories }) {
   const [keyword, setKeyword] = useState(false);
   const [offcanvas, setOffcanvas] = useState(false);
@@ -37,7 +37,7 @@ export default function Navbar({ categories }) {
             <a className="flex">
               <Link href="/">
                 <div className=" w-4/12 cursor-pointer lg:justify-start ">
-                  <Image className="" src="/icon.svg" width={60} height={60} />
+                  <img alt="gambar" src="/icon.svg" width={60} height={60} />
                   
                 </div>
                   

@@ -24,7 +24,7 @@ export default function LandingPage() {
           </div>
         </div>
         <div className="lg:w-5/12 w-6/8 lg:ml-28 ">
-          <Image width={"20px"} height={"20px"}className="lg:h-100 w-90 " src="/Learning.svg" alt="" />
+          <img className="lg:h-100 w-90 " src="/Learning.svg" alt="" />
         </div>
       </div>
 
