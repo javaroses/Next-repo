@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+
 
 export default function LandingPage() {
   return (
@@ -9,7 +9,7 @@ export default function LandingPage() {
         <div className="lg:w-5/12 lg:mr-20 w-3/8 mr-2">
           <h1 className="lg:text-6xl text-lg pb-4">Learn Any Skills to advance your career path</h1>
           <p className="lg:text-xl text-gray-500 text-[8px]">Want to improve your work skills? You need to study harder with the help of a great mentor to improve your performance at work</p>
-          <div className="w-2/5 mt-10">
+          <div className="w-2/5 mt-10 invisible lg:visible">
             <button
               type="submit"
               className=" group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -30,7 +30,7 @@ export default function LandingPage() {
 
       <div className="grid justify-items-center pt-16 lg:pb-20">
         <h1 className="text-semibold text-xl ">Media Partner :</h1>
-        <Image width={"20px"} height={"20px"} className="h-40" src="/Asset 3.svg" alt="" />
+        <img className="h-40" src="/Asset 3.svg" alt="" />
       </div>
     </>
   );

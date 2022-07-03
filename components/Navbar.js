@@ -33,14 +33,12 @@ export default function Navbar({ categories }) {
               </svg>
             </button>
           </div>
-          <div className="lg:w-6/12 w-6/12 ">
-            <a className="flex">
+          <div className="w-6/12 flex items-center justify-center lg:justify-start cursor-pointer ">
+            <a>
               <Link href="/">
-                <div className=" w-4/12 cursor-pointer lg:justify-start ">
+                <div>
                   <img alt="gambar" src="/icon.svg" width={60} height={60} />
-                  
                 </div>
-                  
               </Link>
             </a>
           </div>
@@ -53,7 +51,7 @@ export default function Navbar({ categories }) {
             </button>
           </div>
           <div
-            className={`lg:w-4/12 w-full bg-gradient-to-b from-gray-500 to-gray-700 lg:bg-none lg:static fixed top-0 h-full lg:h-auto p-10 p-0 transition-all 
+            className={`lg:w-4/12 w-full bg-gradient-to-b from-gray-500 to-gray-700 lg:bg-none lg:static fixed top-0 h-full lg:h-auto p-10 transition-all 
           ${offcanvas ? "left-0" : "-left-full"}`}
           >
             <button className="absolute top-10 right-10 lg:hidden" onClick={() => setOffcanvas(false)}>
