@@ -5,7 +5,7 @@ import PostAuthor from "@components/PostAuthor";
 import Head from "next/head";
 import { formatDate } from "utils/utils";
 import  ReactMarkdown  from "react-markdown";
-
+import Image from "next/image";
 export async function getServerSideProps({ params: { slug } }) {
   const reqDetail = await fetch(process.env.NEXT_PUBLIC_APIURL + '/posts?slug=' + slug);
   const single = await reqDetail.json();
@@ -50,7 +50,7 @@ export default function Detail({
           />
         </div>
         <div className="md:w-10/12 w-full flex item-center mx-auto my-10">
-          <img src={process.env.NEXT_PUBLIC_APIURL + thumbnail.formats.large.url} className="w-full rounded-2xl" alt="" />
+          <Image width={'20px'} height={"20px"} src={process.env.NEXT_PUBLIC_APIURL + thumbnail.formats.large.url} className="w-full rounded-2xl" alt="" />
         </div>
         <div className="md:w-8/12 w-full mx-auto leading-relaxed">
           <p className="text-2xl mb-4 ">

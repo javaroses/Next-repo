@@ -24,13 +24,13 @@ export default function LandingPage() {
           </div>
         </div>
         <div className="lg:w-5/12 w-6/8 lg:ml-28 ">
-          <img className="lg:h-100 w-90 " src="/Learning.svg" alt="" />
+          <Image width={"20px"} height={"20px"}className="lg:h-100 w-90 " src="/Learning.svg" alt="" />
         </div>
       </div>
 
       <div className="grid justify-items-center pt-16 lg:pb-20">
         <h1 className="text-semibold text-xl ">Media Partner :</h1>
-        <img  className="h-40" src="/Asset 3.svg" alt="" />
+        <Image width={"20px"} height={"20px"} className="h-40" src="/Asset 3.svg" alt="" />
       </div>
     </>
   );

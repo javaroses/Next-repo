@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SectionHeader from "@components/sectionHeader";
+import SectionHeader from "@components/SectionHeader";
 import Container from "@components/Container";
 // import Layout from "@components/Layout";
 import mockPosts from "/utils/posts.json"

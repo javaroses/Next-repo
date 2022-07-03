@@ -1,5 +1,6 @@
 import InfoPost from "@components/InfoPost";
 import Link from "next/link";
+import Image from "next/image";
 export default function FeaturedPost({
   title, 
   category,
@@ -15,7 +16,7 @@ export default function FeaturedPost({
         <div className="px-4 lg:w-8/12 md:w-7/12 w-full">
           <Link href={`/${slug}`}>
           <a>
-          <img src={process.env.NEXT_PUBLIC_APIURL + thumbnail.formats.medium.url} className="rounded-lg aspect-video" />
+          <Image width={"20px"} height={"20px"} src={process.env.NEXT_PUBLIC_APIURL + thumbnail.formats.medium.url} className="rounded-lg aspect-video" />
           </a>
           </Link>
         </div>

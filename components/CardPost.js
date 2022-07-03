@@ -1,5 +1,6 @@
 import Link from "next/link";
 import InfoPost from "./InfoPost";
+import Image from "next/image";
 
 
 export default function CardPost(props) {
@@ -8,7 +9,7 @@ export default function CardPost(props) {
     <article>
       <Link href={`/${props.slug}`}>
         <a>
-          <img src={ process.env.NEXT_PUBLIC_APIURL + props.thumbnail.url} className=" w-full rounded-2xl aspect-video mb-4 shadow-2xl"  />
+          <Image width={"20px"} height={'20px'} src={ process.env.NEXT_PUBLIC_APIURL + props.thumbnail.url} className=" w-full rounded-2xl aspect-video mb-4 shadow-2xl"  />
         </a>
       </Link>
       <InfoPost
